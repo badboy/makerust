@@ -1,0 +1,28 @@
+name: CI
+on:
+  push:
+    branches: main
+
+env:
+  CARGO_INCREMENTAL: 0
+  CARGO_NET_RETRY: 10
+  CI: 1
+  RUST_BACKTRACE: short
+  RUSTFLAGS: -D warnings
+  RUSTUP_MAX_RETRIES: 10
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - uses: dtolnay/rust-toolchain@stable
+    - name: Install Nix
+      uses: DeterminateSystems/nix-installer-action@main
+    - name: Install GNU make
+      run: nix profile install 'nixpkgs#gnumake'
+    - run: make hello-world
+    - run: make info
