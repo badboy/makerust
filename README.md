@@ -56,6 +56,10 @@ and then get going.
 
 make is good. Rust is good. In combination it can only get better.
 
+## But really ... why?
+
+We don't ask this question around here.
+
 ## Should I really?
 
 Check with your team first, but I can't see a reason why not.
