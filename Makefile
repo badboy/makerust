@@ -1,12 +1,19 @@
-.SHELLFLAGS = -c 'echo $$1 > tmp.rs && rustc tmp.rs -o out.bin && ./out.bin' --
+include makerust.mk
 
-.ONESHELL:
-all:
+hello-world:
 	@fn main() {
-		println!("hello make!")
+		println!("hello makerust!")
 	}
 
-more:
-	@fn main() {
-		println!("hello more");
+info: dep.xshell dep.anyhow
+	@
+	use anyhow::Result;
+	use xshell::{cmd, Shell};
+	
+	fn main() -> Result<()> {
+		let sh = Shell::new()?;
+		let branch = "main";
+		let commit_hash = cmd!(sh, "git rev-parse {branch}").read()?;
+		println!("makerust running on commit {commit_hash}");
+		Ok(())
 	}
