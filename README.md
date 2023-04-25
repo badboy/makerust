@@ -74,3 +74,8 @@ I don't make jokes on the internet.
 Any copyright is dedicated to the Public Domain.
 http://creativecommons.org/publicdomain/zero/1.0/
 ```
+
+```
+THE SOFTWARE IS PROVIDED "AS IS", BUT ALSO I TAKE FULL RESPONSIBILITY FOR
+THIS UNNUTTERABLE HORROR AND YOU SHALL RECITE MY NAME FOR FOREVER ALONGSIDE IT.
+```
