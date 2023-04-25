@@ -5,3 +5,8 @@ all:
 	@fn main() {
 		println!("hello make!")
 	}
+
+more:
+	@fn main() {
+		println!("hello more");
+	}
